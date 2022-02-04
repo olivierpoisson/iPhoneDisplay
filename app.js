@@ -101,14 +101,14 @@ swatches.forEach((swatch, index) => {
         currentSwatch = swatchName;
     });
 });
-
+let width = document.querySelector("body").getBoundingClientRect().width;
 const timelineVideo = gsap.timeline({
     scrollTrigger: {
         trigger: ".fifth-page",
-        start: "0%",
-        end: "150%",
+        start: width < 400 ? "-70%" : "0%",
+        end: width < 400 ? "10%" : "150%",
         scrub: true,
-        pin: true,
+        pin: width < 400 ? false : true,
         pinSpacing: false,
     },
 });
