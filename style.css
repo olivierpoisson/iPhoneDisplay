@@ -195,6 +195,9 @@ a {
     transform: translate(-50%, 0%) scale(0.8);
     transform-origin: bottom;
 }
+.blue {
+    z-index: 1;
+}
 
 /*! Fifth Section */
 .fifth-page {
