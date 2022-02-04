@@ -12,7 +12,6 @@ const timelinePin = gsap.timeline({
 const timelineFadeIn = gsap.timeline({
     scrollTrigger: {
         trigger: ".second-page",
-        markers: true,
         scrub: true,
         start: "-40%",
         end: "40%",
@@ -27,7 +26,6 @@ timelineFadeIn.fromTo(
 const timelineFadeOut = gsap.timeline({
     scrollTrigger: {
         trigger: ".second-page",
-        markers: true,
         scrub: true,
         start: "-20%",
         end: "60%",
@@ -111,6 +109,7 @@ const timelineVideo = gsap.timeline({
         end: "150%",
         scrub: true,
         pin: true,
+        pinSpacing: false,
     },
 });
 timelineVideo.fromTo(
@@ -124,3 +123,17 @@ timelineVideo.fromTo(
     { opacity: 1, stagger: 0.25, duration: 0.5 },
     "<"
 );
+
+//! Last section
+const timelineParallax = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".sixth-page",
+        start: "-25%",
+        end: "50%",
+        scrub: true,
+    },
+});
+
+timelineParallax.fromTo(".photo-description", { y: 0 }, { y: -80 });
+timelineParallax.fromTo(".portrait-container", { y: 0 }, { y: -80 }, "<");
+timelineParallax.fromTo(".phone-video", { y: 0 }, { y: -200 }, "<");
