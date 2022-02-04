@@ -103,3 +103,24 @@ swatches.forEach((swatch, index) => {
         currentSwatch = swatchName;
     });
 });
+
+const timelineVideo = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".fifth-page",
+        start: "0%",
+        end: "150%",
+        scrub: true,
+        pin: true,
+    },
+});
+timelineVideo.fromTo(
+    ".product-video",
+    { currentTime: 0 },
+    { currentTime: 3, duration: 1 }
+); //? 3 because we know the video lasts 3 seconds
+timelineVideo.fromTo(
+    ".product-info-container h3",
+    { opacity: 0 },
+    { opacity: 1, stagger: 0.25, duration: 0.5 },
+    "<"
+);
