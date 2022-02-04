@@ -38,3 +38,36 @@ timelineFadeOut.to(".highlight", {
     color: "rgba(255, 255, 255, 0.4)",
     stagger: 1,
 });
+
+//! Section 3
+const timelineSplit = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".third-page",
+        start: "-25%",
+        end: "20%",
+        scrub: true,
+    },
+});
+timelineSplit.fromTo(".large-phone", { x: "40%" }, { x: "20%" });
+timelineSplit.fromTo(".small-phone", { x: "-40%" }, { x: "-20%" }, "<");
+timelineSplit.fromTo(
+    ".product-text-left",
+    { x: "50%", opacity: 0 },
+    { opacity: 1, x: 0 },
+    "<"
+);
+timelineSplit.fromTo(
+    ".product-text-right",
+    { x: "-50%", opacity: 0 },
+    { opacity: 1, x: 0 },
+    "<"
+);
+const timelineSplitPin = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".third-page",
+        pin: true,
+        pinSpacing: false,
+        start: "0%",
+        end: "100%",
+    },
+});
